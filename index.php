@@ -92,10 +92,14 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 
 	<section id="typography">
 	  <div class="page-header">
-	    <h1>List of all outages <small>Since 7 Feb 2012, 01:00</small></h1>
+	    <h1>List of all outages <small>Since 7 Feb 2012, 01:00.</small></h1>
 	  </div>
 	  <div class="row">
 		<div class="span12">
+			<div class="span12" style="text-align:center">
+				<h5>In a way, the shorter the duration, the more we are affected.</h5>
+				<h5>As someone rushed to reboot the router</h5>
+			</div>
 			<table class="table table-striped table-bordered">
 				<thead>
 					<th>Started at</th><th>Ended at</th><th>Duration (mins)</th>
@@ -108,7 +112,13 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 								<tr>
 									<td><?php echo date("F j, Y, g:i a", intval($result['start']));?></td>
 									<td><?php echo date("F j, Y, g:i a", intval($result['end']));?></td>
-									<td><?php echo round(intval($result['duration'])/60.0);?></td>
+									<td><?php echo max(
+										array(
+											1,
+											round(intval($result['duration'])/60.0)
+											)
+										);?>
+									</td>
 								</tr>
 							<?php
 						}
