@@ -2,7 +2,7 @@
 /*	Test if wifi is working by fetching a tiny html ("it works!")	*/
 	
 date_default_timezone_set('UTC');
-$db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlitedb");
+$db = new PDO('sqlite:/Users/samwong/Sites/bthomehub-reliability/wifi.db') or die("Can't open sqlitedb");
 
 
 
@@ -15,7 +15,7 @@ if(	isConnected()	){
 
 
 // If it doesn't work... eg Exception, string mismatch, whatever reason... consider it as not working
-file_put_contents(date("c"), "downed!");	//physical log!
+file_put_contents("/Users/samwong/Sites/bthomehub-reliability/" . date("c"), "downed!");	//physical log!
 $insertion = $db->prepare("INSERT INTO log (start, end, duration) VALUES (?,?,?)");
 $start = time();
 do{
