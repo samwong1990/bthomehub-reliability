@@ -19,8 +19,8 @@ file_put_contents("/Users/samwong/Sites/bthomehub-reliability/" . date("c"), "do
 $insertion = $db->prepare("INSERT INTO log (start, end, duration) VALUES (?,?,?)");
 $start = time();
 do{
-	echo "Not connected, sleep for 10 sec. Current time is " . date("c") . "\n";
-	sleep(10);
+	echo "Not connected, sleep for 60 sec. Current time is " . date("c") . "\n";
+	sleep(60);
 }while(	!isConnected()	);
 //Finally! We are back on line
 $end = time();

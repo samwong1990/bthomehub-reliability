@@ -56,11 +56,21 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 			<h1>Latest Outage</h1>
 			<h3>
 			<?php
-				$results = $db->query("SELECT * FROM log LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
+				$results = $db->query("SELECT * FROM log ORDER BY start DESC LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
 				echo date("F j, Y, g:i a", intval($results[0]['start']));
 			?>
 			</h3>
-			<p>It lasted for <?php echo round(intval($results[0]['duration'])/60.0);?> mins</p>
+			<p>It lasted for 
+			<?php $mins = round(intval($results[0]['duration'])/60.0);
+				if($mins < 60){
+					$mins = max(array(1, $mins));
+					echo "$mins mins";
+				}else{
+					$hours = round($mins/60);
+					echo "$hours hours";
+				}
+			?> 
+			</p>
 		</div>
 		<div class="span4">
 			<h1>Resets performed</h1>
@@ -74,10 +84,18 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 		<div class="span4">
 			<h1>Longest outage</h1>
 			<h3>
-			<?php
-				$results = $db->query("SELECT * FROM log ORDER BY duration LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
-				echo $results[0]['duration'];
-			?> mins	
+				<?php
+				$results = $db->query("SELECT * FROM log ORDER BY duration DESC LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
+				$mins = round(intval($results[0]['duration'])/60.0);
+				if($mins < 60){
+					$mins = max(array(1, $mins));
+					echo "$mins mins";
+				}else{
+					$hours = round($mins/60);
+					echo "$hours hours";
+				}
+
+				?>	
 			</h3>
 			<p>Happened at <?php echo date("F j, Y, g:i a", intval($results[0]['start']));?></p>
 		</div>
@@ -106,7 +124,7 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 				</thead>
 				<tbody>
 					<?php
-						$results = $db->query("SELECT * FROM log")->fetchAll(PDO::FETCH_ASSOC);
+						$results = $db->query("SELECT * FROM log ORDER BY start DESC")->fetchAll(PDO::FETCH_ASSOC);
 						foreach($results as $result){
 							?>
 								<tr>
