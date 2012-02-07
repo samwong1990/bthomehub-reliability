@@ -1,24 +1,42 @@
 <?php
 /*	Test if wifi is working by fetching a tiny html ("it works!")	*/
 	
+date_default_timezone_set('UTC');
 $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlitedb");
-$insertion = $db->prepare("INSERT INTO log (working) VALUES (?)");
-try{
-	$get = file_get_contents("http://ichackathon.com/itworks.html");
-	var_dump($get);
-	if(trim($get) == 'itworks'){
-		echo "it works!";
-		$insertion->execute(array(1));
-	}else{
-		echo "Wooah, failed";
-		$insertion->execute(array(0));
-	}
-}catch(Exception $e){
-	// Just in case...
-	echo "Wooah, failed";
-	$insertion->execute(array(0));
+
+
+
+echo "Current time is " . date("c");
+if(	isConnected()	){
+	die("it works!\n");
 }
 
 
 
+
+// If it doesn't work... eg Exception, string mismatch, whatever reason... consider it as not working
+$insertion = $db->prepare("INSERT INTO log (start, end, duration) VALUES (?,?,?)");
+$start = time();
+do{
+	echo "Not connected, sleep for 30 sec. Current time is " . date("c") . "\n";
+	sleep(5);
+}while(	!isConnected()	);
+//Finally! We are back on line
+$end = time();
+$insertion->execute(array($start, $end, $end-$start));
+die("downtime recorded\n");
+
+
+
+
+
+
+function isConnected(){
+	$get = file_get_contents("http://ichackathon.com/itworks.php");
+	var_dump($get);
+	if(trim($get) == 'itworks'){
+		return true;
+	}
+	return false;
+}
 ?>
