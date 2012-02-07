@@ -15,6 +15,7 @@ if(	isConnected()	){
 
 
 // If it doesn't work... eg Exception, string mismatch, whatever reason... consider it as not working
+file_put_contents(date("c"), "downed!");	//physical log!
 $insertion = $db->prepare("INSERT INTO log (start, end, duration) VALUES (?,?,?)");
 $start = time();
 do{
