@@ -60,7 +60,7 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 				echo date("F j, Y, g:i a", intval($results[0]['start']));
 			?>
 			</h3>
-			<p>It lasted for <?php echo intval($results[0]['duration'])/60.0;?> mins</p>
+			<p>It lasted for <?php echo round(intval($results[0]['duration'])/60.0);?> mins</p>
 		</div>
 		<div class="span4">
 			<h1>Resets performed</h1>
@@ -108,7 +108,7 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 								<tr>
 									<td><?php echo date("F j, Y, g:i a", intval($result['start']));?></td>
 									<td><?php echo date("F j, Y, g:i a", intval($result['end']));?></td>
-									<td><?php echo intval($result['duration'])/60.0;?></td>
+									<td><?php echo round(intval($result['duration'])/60.0);?></td>
 								</tr>
 							<?php
 						}
