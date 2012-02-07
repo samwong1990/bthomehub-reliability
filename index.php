@@ -92,7 +92,7 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 
 	<section id="typography">
 	  <div class="page-header">
-	    <h1>List of all outages <small>Since 7 Feb 2012, 01:00.</small></h1>
+	    <h1>List of all outages <small>Since 7 Feb 2012, 02:00.</small></h1>
 	  </div>
 	  <div class="row">
 		<div class="span12">
