@@ -106,7 +106,7 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 				</thead>
 				<tbody>
 					<?php
-						$results = $db->query("SELECT * FROM log ORDER BY duration LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
+						$results = $db->query("SELECT * FROM log")->fetchAll(PDO::FETCH_ASSOC);
 						foreach($results as $result){
 							?>
 								<tr>
