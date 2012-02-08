@@ -25,7 +25,11 @@ do{
 //Finally! We are back on line
 $end = time();
 $insertion->execute(array($start, $end, $end-$start));
-die("downtime recorded\n");
+echo "downtime recorded\n";
+
+//Update DDNS in case it was changed
+file_put_contents(date("c"), file_get_contents("https://dynamicdns.park-your-domain.com/update?host=mywifi&domain=samwong.hk&password=827f0abf8f074447974cf247ff83b1f0")); 
+die("All done\n");
 
 
 
