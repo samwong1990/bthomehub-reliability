@@ -117,10 +117,12 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
 	<h1 style="line-height:2em;">Downtime log</h1>
-	<p>I used to reboot my BTHomeHub2 once every few days, now I do it few times a day.</p>
+	<p>I used to reboot my BTHomeHub2 once every few days, now I do it few times <strike>a day</strike> per hour.</p>
 	<p>You want me to change the channel, so I did. To make sure I'm doing it right, I did a <a href="#wifisurvey">wifi survey</a> right next to the router. Now I'm sure the router is <ol><li>Not next to the microwave</li><li>The wifi space is not crowded</li><li>No one is ±1 channel with me.</li></ol></p>
 	<p>It didn't do much, as you can see below. What else can I do to help you help me?</p>
+	<p>Update 9-Feb : Awesome, BTHomehub3 is coming in 3 days to replace my crappy BTHomeHub2 =D.
 	<p>Update 11-Feb : No I can't stick with wired connection either. The wired network dies with the wireless network.</p>
+	<p>Update 12-Feb : WTH, BT just silently cancelled my BTHomehub3 order. I was so <i>lucky</i> to have complained about the horrible connection today, else I won't know anything about this until tuesday. So now we manage to have 44 pounds outstanding balance when we have direct debit activated. I have to call the billing department at 9am tomorrow. That's so awesome! Let the customer do all the work to sort out your non-sense! FML</p>
 </div>
 
 <section id="typography">
