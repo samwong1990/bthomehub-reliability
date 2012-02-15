@@ -31,18 +31,18 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 	<script type="text/javascript">
 
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-20974018-2']);
-	_gaq.push(['_setDomainName', '.']);
-	_gaq.push(['_trackPageview']);
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-20974018-2']);
+	  _gaq.push(['_setDomainName', 'samwong.hk']);
+	  _gaq.push(['_trackPageview']);
 
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
 
-		</script>
+	</script>
 	</head>
 
 	<div class="navbar navbar-fixed-top">
@@ -120,9 +120,13 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 	<p>I used to reboot my BTHomeHub2 once every few days, now I do it few times <strike>a day</strike> per hour.</p>
 	<p>You want me to change the channel, so I did. To make sure I'm doing it right, I did a <a href="#wifisurvey">wifi survey</a> right next to the router. Now I'm sure the router is <ol><li>Not next to the microwave</li><li>The wifi space is not crowded</li><li>No one is ±1 channel with me.</li></ol></p>
 	<p>It didn't do much, as you can see below. What else can I do to help you help me?</p>
+	<br><br>
+	<p>Account no: GB 0875 9921</p>
 	<p>Update 9-Feb : Awesome, BTHomehub3 is coming in 3 days to replace my crappy BTHomeHub2 =D.
 	<p>Update 11-Feb : No I can't stick with wired connection either. The wired network dies with the wireless network.</p>
 	<p>Update 12-Feb : WTH, BT just silently cancelled my BTHomehub3 order. I was so <i>lucky</i> to have complained about the horrible connection today, else I won't know anything about this until tuesday. So now we manage to have 44 pounds outstanding balance when we have direct debit activated. I have to call the billing department at 9am tomorrow. That's so awesome! Let the customer do all the work to sort out your non-sense! FML</p>
+	<p>Update 14-Feb : Okay, so BT decided we need to pay earlier than normal in order to fix its faulty equipment. Fine, so we pay our monthly fee earlier because it is faulty. Sounds logical. Now I had the fee paid, guess what they'd say..... we can have the bthomehub3 in another 3 days! WTF! After a lot of struggle, finally found a kind manager who can ship it with next day delivery. Yey!</p>
+	<p>Update 15-Feb : Woke up to see a BTHomeHub<b>2.0</b> on the table. FML. Made another contact, they said something in the lines of "Since we have shipped you a working replacement, we can't send you another homehub3 blah blah blah". Ha! Fuck you! I was smart enough to ask multiple people to confirm I will be having a homehub3 during my previous conversations. After saying I have all the chat records, I talked to the supervisor again. Initial Outcome: Make a guess, bthomehub3 in another 3 days! Push-pull-push-pull, they said it will arrive on Friday morning. OK, let's see about that. At least I made sure I can use the new homehub2 for now. To be continued...</p>
 </div>
 
 <section id="typography">
@@ -134,6 +138,8 @@ $db = new PDO('sqlite:'.dirname(__FILE__) . '/wifi.db') or die("Can't open sqlit
 			<div class="span12" style="text-align:center">
 				<h5>In a way, the shorter the duration, the more we are affected.</h5>
 				<h5>As someone rushed to reboot the router</h5>
+				<h5>Note: The router can't fix itself.</h5>
+				<h5>New hub connected at ~1830 15 Feb</h5>
 			</div>
 			<table class="table table-striped table-bordered">
 				<thead>
